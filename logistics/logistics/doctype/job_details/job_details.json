@@ -1,233 +1,330 @@
 {
-  "allow_rename": 1,
-  "autoname": "format:JOB-{customer}-{mode_of_transport}-{###}",
-  "creation": "2023-09-26 12:55:55.014196",
-  "default_view": "List",
-  "doctype": "DocType",
-  "editable_grid": 1,
-  "engine": "InnoDB",
-  "field_order": [
-    "customer_details_section",
-    "job_number",
-    "job_type",
-    "billing_customer_name",
-    "billing_customer_address",
-    "loading_place_address",
-    "contact_name",
-    "contact_number",
-    "consignee_name_address",
-    "unloading_place_address",
-    "unloading_contact_name",
-    "unloading_contact_number",
-    "client_coordinator",
-    "job_details_section",
-    "date",
-    "po_wbs_cust_ref",
-    "job_name",
-    "assigned_by",
-    "no_of_vehicles",
-    "vehicle_type",
-    "driver_name",
-    "truck_no",
-    "no_of_labor",
-    "pickup_datetime",
-    "delivery_datetime",
-    "date_of_supply",
-    "no_of_pcs",
-    "gross_weight",
-    "volume_cbm",
-    "commodity",
-    "note_remarks",
-    "job_status"
-  ],
-  "fields": [
-    // Customer Details Section
-    {
-      "fieldname": "customer_details_section",
-      "fieldtype": "Section Break",
-      "label": "Customer Details"
-    },
-    {
-      "fieldname": "job_number",
-      "fieldtype": "Data",
-      "label": "Job Number",
-      "read_only": 1,
-      "hidden": 1
-    },
-    {
-      "fieldname": "job_type",
-      "fieldtype": "Select",
-      "label": "Job Type",
-      "options": "\nLogistics\nWarehouse\nTransport"
-    },
-    {
-      "fieldname": "billing_customer_name",
-      "fieldtype": "Link",
-      "label": "Billing Customer Name",
-      "options": "Customer"
-    },
-    {
-      "fieldname": "billing_customer_address",
-      "fieldtype": "Small Text",
-      "label": "Billing Customer Address",
-      "fetch_from": "billing_customer_name.address"
-    },
-    {
-      "fieldname": "loading_place_address",
-      "fieldtype": "Small Text",
-      "label": "Loading Place and Address"
-    },
-    {
-      "fieldname": "contact_name",
-      "fieldtype": "Data",
-      "label": "Contact Name"
-    },
-    {
-      "fieldname": "contact_number",
-      "fieldtype": "Data",
-      "label": "Contact Number"
-    },
-    {
-      "fieldname": "consignee_name_address",
-      "fieldtype": "Small Text",
-      "label": "Consignee Name and Address"
-    },
-    {
-      "fieldname": "unloading_place_address",
-      "fieldtype": "Small Text",
-      "label": "Unloading Place and Address"
-    },
-    {
-      "fieldname": "unloading_contact_name",
-      "fieldtype": "Data",
-      "label": "Contact Name (Unloading)"
-    },
-    {
-      "fieldname": "unloading_contact_number",
-      "fieldtype": "Data",
-      "label": "Contact Number (Unloading)"
-    },
-    {
-      "fieldname": "client_coordinator",
-      "fieldtype": "Link",
-      "label": "Client Coordinator",
-      "options": "User"
-    },
-
-    // Job Details Section
-    {
-      "fieldname": "job_details_section",
-      "fieldtype": "Section Break",
-      "label": "Job Details"
-    },
-    {
-      "fieldname": "date",
-      "fieldtype": "Date",
-      "label": "Date"
-    },
-    {
-      "fieldname": "po_wbs_cust_ref",
-      "fieldtype": "Data",
-      "label": "P.O/WBS/Cust Ref"
-    },
-    {
-      "fieldname": "job_name",
-      "fieldtype": "Data",
-      "label": "Job Name"
-    },
-    {
-      "fieldname": "assigned_by",
-      "fieldtype": "Link",
-      "label": "Assigned By",
-      "options": "User"
-    },
-    {
-      "fieldname": "no_of_vehicles",
-      "fieldtype": "Int",
-      "label": "No of Vehicles"
-    },
-    {
-      "fieldname": "vehicle_type",
-      "fieldtype": "Select",
-      "label": "Vehicle Type",
-      "options": "\nTruck\nTrailer\nVan"
-    },
-    {
-      "fieldname": "driver_name",
-      "fieldtype": "Link",
-      "label": "Driver Name",
-      "options": "Driver"
-    },
-    {
-      "fieldname": "truck_no",
-      "fieldtype": "Data",
-      "label": "Truck No"
-    },
-    {
-      "fieldname": "no_of_labor",
-      "fieldtype": "Int",
-      "label": "No of Labor"
-    },
-    {
-      "fieldname": "pickup_datetime",
-      "fieldtype": "Datetime",
-      "label": "Pickup Date/Time"
-    },
-    {
-      "fieldname": "delivery_datetime",
-      "fieldtype": "Datetime",
-      "label": "Delivery Date/Time"
-    },
-    {
-      "fieldname": "date_of_supply",
-      "fieldtype": "Date",
-      "label": "Date of Supply"
-    },
-    {
-      "fieldname": "no_of_pcs",
-      "fieldtype": "Int",
-      "label": "No of Pcs"
-    },
-    {
-      "fieldname": "gross_weight",
-      "fieldtype": "Float",
-      "label": "Gross Weight (kg)"
-    },
-    {
-      "fieldname": "volume_cbm",
-      "fieldtype": "Float",
-      "label": "Volume/CBM"
-    },
-    {
-      "fieldname": "commodity",
-      "fieldtype": "Data",
-      "label": "Commodity"
-    },
-    {
-      "fieldname": "note_remarks",
-      "fieldtype": "Text Editor",
-      "label": "Note/Remarks"
-    },
-    {
-      "fieldname": "job_status",
-      "fieldtype": "Select",
-      "label": "Job Status",
-      "options": "\nDraft\nIn Progress\nCompleted\nCancelled"
-    }
-  ],
-  // Keep other mandatory fields hidden (do NOT delete them)
-  "fields": [
-    ... (retain hidden standard fields like "owner", "modified", etc. with "hidden": 1)
-  ],
-  "module": "Logistics",
-  "name": "Job Details",
-  "permissions": [
-    {
-      "role": "System Manager",
-      "read": 1,
-      "write": 1,
-      "create": 1,
-      "delete": 1
-    }
-  ]
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:JOB-{customer}-{mode_of_transport}-{###}",
+ "creation": "2023-09-26 12:55:55.014196",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "job_details_section",
+  "company",
+  "mode_of_transport",
+   "job_type",
+  "total_revenue",
+  "status",
+  "column_break_bdrsj",
+  "date",
+  "customer",
+  "customer_address",
+  "total_expense",
+  "job_information_section",
+  "hbl",
+  "awb_no",
+  "container_no",
+  "chargeable_weight",
+  "origin",
+  "shipper",
+   "shipper_address",
+   "loading_address",
+  "vessel",
+  "arrival_date",
+  "departure_date",
+  "column_break_vulm",
+  "mbl",
+  "carrier",
+  "container_type",
+  "item_description",
+  "destination",
+  "consignee",
+  "bayan_no",
+  "agent",
+  "driver_data_section",
+  "vehicle",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "job_details_section",
+   "fieldtype": "Section Break",
+   "label": "Job Details"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "mode_of_transport",
+   "fieldtype": "Select",
+   "label": "Mode of Transport",
+   "options": "\nRoad\nAir\nSea\nWarehouse"
+  },
+    "fieldname": "job_type",
+   "fieldtype": "Select",
+   "label": "Job Type",
+   "options": "\nTransport\nCustoms Clearance"
+  },
+  {
+   "fieldname": "vehicle",
+   "fieldtype": "Table",
+   "label": "Daily Log Data",
+   "options": "Driver Data"
+  },
+  {
+   "fieldname": "column_break_bdrsj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fetch_from": "sales_invoice.customer",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+{
+   "fetch_from": "sales_invoice.customer_address",
+   "fieldname": "customer_address",
+   "fieldtype": "Link",
+   "label": "Billing Address",
+   "options": "Address"
+},
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Job Details",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "driver_data_section",
+   "fieldtype": "Section Break",
+   "label": "Daily Log Details"
+  },
+  {
+   "bold": 1,
+   "fieldname": "total_revenue",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Total Revenue",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_expense",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Total Expense",
+   "read_only": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nOpen\nQuoted\nIn progress\nClosed"
+  },
+  {
+   "fieldname": "job_information_section",
+   "fieldtype": "Section Break",
+   "label": "Job Information"
+  },
+  {
+   "depends_on": "eval:doc.mode_of_transport=='Sea'",
+   "fieldname": "hbl",
+   "fieldtype": "Data",
+   "label": "HBL"
+  },
+  {
+   "depends_on": "eval:doc.mode_of_transport=='Air'",
+   "fieldname": "awb_no",
+   "fieldtype": "Data",
+   "label": "AWB No"
+  },
+  {
+   "depends_on": "eval:doc.mode_of_transport=='Sea'",
+   "fieldname": "container_no",
+   "fieldtype": "Data",
+   "label": "Container No"
+  },
+  {
+   "depends_on": "eval:doc.mode_of_transport=='Air'",
+   "fieldname": "chargeable_weight",
+   "fieldtype": "Data",
+   "label": "Chargeable Weight"
+  },
+  {
+   "fieldname": "origin",
+   "fieldtype": "Data",
+   "label": "Origin"
+  },
+  {
+   "fieldname": "shipper",
+   "fieldtype": "Data",
+   "label": "Shipper"
+  },
+   {
+   "fieldname": "shipper_address",
+   "fieldtype": "Small Text",
+   "label": "Shipper Address"
+},
+      {
+   "fieldname": "loading_address",
+   "fieldtype": "Small Text",
+   "label": "Loading Place & Address"
+},
+  {
+   "depends_on": "eval:doc.mode_of_transport=='Sea'",
+   "fieldname": "vessel",
+   "fieldtype": "Data",
+   "label": "Vessel"
+  },
+  {
+   "fieldname": "departure_date",
+   "fieldtype": "Date",
+   "label": "Departure Date"
+  },
+  {
+   "fieldname": "agent",
+   "fieldtype": "Data",
+   "label": "Agent"
+  },
+  {
+   "fieldname": "column_break_vulm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.mode_of_transport=='Sea'",
+   "fieldname": "mbl",
+   "fieldtype": "Data",
+   "label": "MBL"
+  },
+  {
+   "depends_on": "eval:doc.mode_of_transport=='Air'",
+   "fieldname": "carrier",
+   "fieldtype": "Data",
+   "label": "Carrier"
+  },
+  {
+   "depends_on": "eval:doc.mode_of_transport=='Sea'",
+   "fieldname": "container_type",
+   "fieldtype": "Data",
+   "label": "Container Type"
+  },
+  {
+   "depends_on": "eval:doc.mode_of_transport=='Air'",
+   "fieldname": "item_description",
+   "fieldtype": "Data",
+   "label": "Item Description"
+  },
+  {
+   "fieldname": "destination",
+   "fieldtype": "Data",
+   "label": "Destination"
+  },
+  {
+   "fieldname": "consignee",
+   "fieldtype": "Data",
+   "label": "Consignee"
+  },
+  {
+   "fieldname": "bayan_no",
+   "fieldtype": "Data",
+   "label": "Bayan No"
+  },
+  {
+   "fieldname": "arrival_date",
+   "fieldtype": "Date",
+   "label": "Arrival Date"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "custom": 1,
+   "group": "Invoice Details",
+   "link_doctype": "Sales Invoice",
+   "link_fieldname": "custom_job_number"
+  },
+  {
+   "group": "Expense Details",
+   "link_doctype": "Journal Entry",
+   "link_fieldname": "custom_job_details"
+  },
+  {
+   "group": "Warehouse Rental",
+   "link_doctype": "Warehouse Rental",
+   "link_fieldname": "job_details"
+  },
+  {
+   "group": "Quotation",
+   "link_doctype": "Quotation",
+   "link_fieldname": "custom_job_details"
+  },
+  {
+   "group": "Invoice Details",
+   "link_doctype": "Purchase Invoice",
+   "link_fieldname": "custom_job_number"
+  }
+ ],
+ "modified": "2024-12-10 13:18:46.504082",
+ "modified_by": "Administrator",
+ "module": "Logistics",
+ "name": "Job Details",
+ "name_case": "Title Case",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "All",
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Green",
+   "title": "Open"
+  },
+  {
+   "color": "Yellow",
+   "title": "Quoted"
+  },
+  {
+   "color": "Blue",
+   "title": "In progress"
+  },
+  {
+   "color": "Red",
+   "title": "Closed"
+  }
+ ],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
 }
