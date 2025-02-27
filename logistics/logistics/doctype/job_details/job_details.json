@@ -11,7 +11,7 @@
   "job_details_section",
   "company",
   "mode_of_transport",
-   "job_type",
+  "job_type",
   "total_revenue",
   "status",
   "column_break_bdrsj",
@@ -26,8 +26,8 @@
   "chargeable_weight",
   "origin",
   "shipper",
-   "shipper_address",
-   "loading_address",
+  "shipper_address",
+  "loading_address",
   "vessel",
   "arrival_date",
   "departure_date",
@@ -62,7 +62,8 @@
    "label": "Mode of Transport",
    "options": "\nRoad\nAir\nSea\nWarehouse"
   },
-  {  "fieldname": "job_type",
+  {
+   "fieldname": "job_type",
    "fieldtype": "Select",
    "label": "Job Type",
    "options": "\nTransport\nCustomsClearance"
@@ -89,13 +90,13 @@
    "label": "Customer",
    "options": "Customer"
   },
-{
+  {
    "fetch_from": "sales_invoice.customer_address",
    "fieldname": "customer_address",
    "fieldtype": "Link",
    "label": "Billing Address",
    "options": "Address"
-},
+  },
   {
    "fieldname": "amended_from",
    "fieldtype": "Link",
@@ -170,16 +171,16 @@
    "fieldtype": "Data",
    "label": "Shipper"
   },
-   {
+  {
    "fieldname": "shipper_address",
    "fieldtype": "Small Text",
    "label": "Shipper Address"
-},
-      {
+  },
+  {
    "fieldname": "loading_address",
    "fieldtype": "Small Text",
    "label": "Loading Place & Address"
-},
+  },
   {
    "depends_on": "eval:doc.mode_of_transport=='Sea'",
    "fieldname": "vessel",
@@ -199,79 +200,6 @@
   {
    "fieldname": "column_break_vulm",
    "fieldtype": "Column Break"
-  },
-  {
-   "depends_on": "eval:doc.mode_of_transport=='Sea'",
-   "fieldname": "mbl",
-   "fieldtype": "Data",
-   "label": "MBL"
-  },
-  {
-   "depends_on": "eval:doc.mode_of_transport=='Air'",
-   "fieldname": "carrier",
-   "fieldtype": "Data",
-   "label": "Carrier"
-  },
-  {
-   "depends_on": "eval:doc.mode_of_transport=='Sea'",
-   "fieldname": "container_type",
-   "fieldtype": "Data",
-   "label": "Container Type"
-  },
-  {
-   "depends_on": "eval:doc.mode_of_transport=='Air'",
-   "fieldname": "item_description",
-   "fieldtype": "Data",
-   "label": "Item Description"
-  },
-  {
-   "fieldname": "destination",
-   "fieldtype": "Data",
-   "label": "Destination"
-  },
-  {
-   "fieldname": "consignee",
-   "fieldtype": "Data",
-   "label": "Consignee"
-  },
-  {
-   "fieldname": "bayan_no",
-   "fieldtype": "Data",
-   "label": "Bayan No"
-  },
-  {
-   "fieldname": "arrival_date",
-   "fieldtype": "Date",
-   "label": "Arrival Date"
-  }
- ],
- "index_web_pages_for_search": 1,
- "links": [
-  {
-   "custom": 1,
-   "group": "Invoice Details",
-   "link_doctype": "Sales Invoice",
-   "link_fieldname": "custom_job_number"
-  },
-  {
-   "group": "Expense Details",
-   "link_doctype": "Journal Entry",
-   "link_fieldname": "custom_job_details"
-  },
-  {
-   "group": "Warehouse Rental",
-   "link_doctype": "Warehouse Rental",
-   "link_fieldname": "job_details"
-  },
-  {
-   "group": "Quotation",
-   "link_doctype": "Quotation",
-   "link_fieldname": "custom_job_details"
-  },
-  {
-   "group": "Invoice Details",
-   "link_doctype": "Purchase Invoice",
-   "link_fieldname": "custom_job_number"
   }
  ],
  "modified": "2024-12-10 13:18:46.504082",
@@ -281,49 +209,8 @@
  "name_case": "Title Case",
  "naming_rule": "Expression",
  "owner": "Administrator",
- "permissions": [
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "System Manager",
-   "share": 1,
-   "write": 1
-  },
-  {
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "All",
-   "share": 1
-  }
- ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": [
-  {
-   "color": "Green",
-   "title": "Open"
-  },
-  {
-   "color": "Yellow",
-   "title": "Quoted"
-  },
-  {
-   "color": "Blue",
-   "title": "In progress"
-  },
-  {
-   "color": "Red",
-   "title": "Closed"
-  }
- ],
  "track_changes": 1,
  "track_seen": 1,
  "track_views": 1
