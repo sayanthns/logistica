@@ -62,7 +62,7 @@
    "label": "Mode of Transport",
    "options": "\nRoad\nAir\nSea\nWarehouse"
   },
-    "fieldname": "job_type",
+  {  "fieldname": "job_type",
    "fieldtype": "Select",
    "label": "Job Type",
    "options": "\nTransport\nCustomsClearance"
