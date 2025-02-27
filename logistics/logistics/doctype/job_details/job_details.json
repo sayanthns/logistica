@@ -65,7 +65,7 @@
     "fieldname": "job_type",
    "fieldtype": "Select",
    "label": "Job Type",
-   "options": "\nTransport\nCustoms Clearance"
+   "options": "\nTransport\nCustomsClearance"
   },
   {
    "fieldname": "vehicle",
